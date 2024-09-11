@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+                              <meta charset="UTF-8">
+                              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                              <title> Image Gallery</title>
+                              <style>
+                                    body
+{
+                              font-family: Arial, Helvetica, sans-serif;
+                              background-color: aliceblue;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              height: 900px;
+                              margin: 0;
+}
+
+                              header
+                              {
+                                color: black;
+                                padding: 1rem 0;
+                                text-align: center;
+                              }
+.gallery-container
+{
+                              background-color:gray;
+                              padding: 20px;
+                              border-radius: 10px;
+                              box-shadow: 0 0 15px rgba(0,0,0,0.1);
+                              max-width: 500%;
+                              display: flex;
+}
+.main-iamge
+{
+                              width: 100%;
+                              margin-right: 20px;
+                             height: auto;
+}
+.main-image img
+{
+                              width: 100%;
+                              height: auto;
+                              border-radius: 10px;
+                              object-fit: cover;
+ }
+ .thumbnails
+ {
+                              align-items: center;
+                              display: flex;
+                              justify-content:flex-start;
+ }
+ .thumbnails img
+ {
+                              width: 300px;
+                              height: 300px;
+                              border-radius: 10px;
+                              cursor: pointer;
+                              transition: transform 0.3s, box-shadow 0.3s;
+                              display:inline-flex;
+                              margin-bottom:15px;
+ }
+ .thumbnails img:hover
+ {
+                              transform: scale(1.05);
+                              box-shadow: 0 0 10px rgba(0,0,0,0.3)
+ }
+
+
+                              </style>
+</head>
+<body>
+      <header>
+            <h1>Welcome to Image Gallery</h1>  
+      </header>
+            <div class="gallery-container">
+                  <div class="gallery">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLYR3bRoWlZcrHkaqILYxZaDGYRoDKQDfVKg&s" alt="image1" width="266" height="266">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg89Cil34BJP3dNhdaFKO3fWN9eLqH6Iw0Qw&s" alt="image2" height="266">
+                        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBJBICOsH6jBAxtRTa6jxwrpmivFCYWU-QXg&s" alt="image3" height="266" width="266">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTahQ-BbTSKHIdaplN_v5vqr8Yvv79YIDGsDw&s" alt="image4" height="266" width="266">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvFb-ZDraNxUNQ8OJXwdOtTi-dNb8NJ7qxaw&s" alt="image5" height="266" width="266">
+                        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBb6GlBNubXJue1knngIqe4sh9Rd1G3ApBSg&s" alt="image6" height="266" width="266">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9GnX5bzr2oRO4Om43DC_EV4Pp09F-9Mac_w&s" alt="image7"height="266" width="266" >
+                        <img src="https://img.gaadicdn.com/images/car-images/large/Mahindra/Thar/10751/1710155680350/224_Stealth-Black_0d0d0d.jpg" alt="image8"height="266" width="266" >
+                        <img src="https://www.bollywoodhungama.com/wp-content/uploads/2016/10/Shraddha-Kapoor-07.jpg" alt="image9"height="266" width="266" >
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHP2W0X8Bj9Wwou8Y5Iv2q_Aa-nME9SMwEAA&s" alt="image10"height="266"width="266">  
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFmvhycWE0UfjtVWfWEbm5zPixmVIh012g8A&s" alt="image11"height="266"width="266">    
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0CiN3DgeRm-JSjwOAcLluJjMYKO6jzCtEeBV65mitaOOtjZhyX0XuZxS8GGvHbx9AGqIqC4a3AwjtBHt9HHGCo6Mxja-uK6u-S0_cSNAYJCMDrd_AXumUXQ0SUu8Glb4Q_WFMiNO6cw/s400/Aashiqui-2-poster-ft.-Aditya-Roy-Kapoor-Sharddha-Kapoor.jpg" alt="image12"height="266"width="266">                                                                                                              </div>
+     <script>
+      let currentIndex=0;
+function navigate(direction)
+{
+                              const gallery=
+                              document.querySelector('.gallery');
+                              const images=
+                              document.querySelectorAll('.gallery img');
+                              const totalImages=images.length;
+                              currentIndex+=direction;
+                              if(currentIndex<0)
+                              {
+                                                            currentIndex=totalImages-1;
+                              }
+                              else if(currentIndex>=totalImages)
+                              {
+                                                            currentIndex=0;
+                              }
+                              gallery.computedStyleMap.transform='translateX(${ -currentIndex*100}%)';
+                              
+}
+     </script>                     
+</body>
+</html>
